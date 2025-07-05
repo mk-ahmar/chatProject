@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>AuthDemo Home</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 5em; }
+    a.button {
+      display: inline-block; margin: 0.5em; padding: 1em 2em;
+      text-decoration: none; background: #007acc; color: white; border-radius: 0.3em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to ChatProject</h1>
+  <a th:href="@{/login}" class="button">Log In</a>
+  <a th:href="@{/signup}" class="button">Sign Up</a>
+  <a th:href="@{/guest}" class="button">Continue as Guest</a>
+</body>
+</html>
