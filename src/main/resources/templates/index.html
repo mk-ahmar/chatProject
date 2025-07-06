@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>AuthDemo Home</title>
+  <title>ChatProject Home</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin-top: 5em; }
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+    }
+    .buttons {
+      display: flex;
+      gap: 1em;
+    }
     a.button {
-      display: inline-block; margin: 0.5em; padding: 1em 2em;
-      text-decoration: none; background: #007acc; color: white; border-radius: 0.3em;
+      padding: .75em 1.5em;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 500;
+      color: #fff;
+      background: #2196f3;
+      border-radius: 4px;
+      transition: background .2s ease-in-out;
+    }
+    a.button:hover {
+      background: #1976d2;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to ChatProject by Md Kashf !</h1>
-  <a th:href="@{/login}" class="button">Log In</a>
-  <a th:href="@{/signup}" class="button">Sign Up</a>
-  <a th:href="@{/guest}" class="button">Continue as Guest</a>
+  <h1>Welcome to ChatProject</h1>
+  <div class="buttons">
+    <a th:href="@{/login}" class="button">Log In</a>
+    <a th:href="@{/signup}" class="button">Sign Up</a>
+    <a th:href="@{/guest}" class="button">Guest</a>
+  </div>
 </body>
 </html>
