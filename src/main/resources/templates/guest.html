@@ -2,11 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Guest View</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: .5em;
+    }
+    p {
+      font-size: 1em;
+      margin: .5em 0;
+    }
+    a {
+      color: #2196f3;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      color: #1976d2;
+    }
+  </style>
 </head>
 <body>
-  <h1>👋 Hello, Guest!</h1>
-  <p>This is a public page. Feel free to explore.</p>
-  <p><a th:href="@{/}">Back to Home</a></p>
+  <div>
+    <h1>👋 Hello, Guest!</h1>
+    <p>This is a public page. Enjoy exploring.</p>
+    <p><a th:href="@{/}">Back to Home</a></p>
+  </div>
 </body>
-
 </html>
