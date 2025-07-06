@@ -2,14 +2,50 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Sign Up</title>
+  <style>
+    /* minimalist styling */
+    body { font-family: Arial, sans-serif; background: #f0f2f5; }
+    .card {
+      max-width: 400px; margin: 5em auto; padding: 2em;
+      background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    input, button { width: 100%; padding: 0.75em; margin-top: 0.5em; }
+    button { background: #007acc; color: white; border: none; }
+    .error { color: #d9534f; font-size: 0.9em; }
+  </style>
 </head>
 <body>
-  <h1>Sign Up</h1>
-  <form th:action="@{/signup}" th:object="${userForm}" method="post">
-    <label>Username: <input type="text" th:field="*{username}" required/></label><br/>
-    <label>Password: <input type="password" th:field="*{password}" required/></label><br/>
-    <button type="submit">Register</button>
-  </form>
-  <p><a th:href="@{/}">Back to Home</a></p>
+  <div class="card">
+    <h2>Create Account</h2>
+    <form th:action="@{/signup}" th:object="${userForm}" method="post">
+      <label>Name</label>
+      <input type="text" th:field="*{name}" required/>
+      <div th:if="${#fields.hasErrors('name')}" class="error"
+           th:errors="*{name}"></div>
+
+      <label>Email</label>
+      <input type="email" th:field="*{email}" required/>
+      <div th:if="${#fields.hasErrors('email')}" class="error"
+           th:errors="*{email}"></div>
+
+      <label>Date of Birth</label>
+      <input type="date" th:field="*{dob}" required/>
+      <div th:if="${#fields.hasErrors('dob')}" class="error"
+           th:errors="*{dob}"></div>
+
+      <label>Username</label>
+      <input type="text" th:field="*{username}" required/>
+      <div th:if="${#fields.hasErrors('username')}" class="error"
+           th:errors="*{username}"></div>
+
+      <label>Password</label>
+      <input type="password" th:field="*{password}" required/>
+      <div th:if="${#fields.hasErrors('password')}" class="error"
+           th:errors="*{password}"></div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p style="text-align:center"><a th:href="@{/login}">Already have an account? Log in</a></p>
+  </div>
 </body>
 </html>
